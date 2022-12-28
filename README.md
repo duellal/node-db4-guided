@@ -30,3 +30,30 @@ For the `animals` the client wants to record:
 - list of all the zoos where they have resided.
 
 Determine the database tables necessary to track this information and build the migrations
+
+
+## Rules for Designing Tables:
+1) Use an artificial primary key (PK)
+2) Represents a subject of appointment
+3) Table Names: 
+    - Plural
+    - Be consistent
+    - No Acryonyms
+    - Not Ambiguous
+4) EVERYBODY understand what it is
+
+## Rules for Columns:
+1) No multipart columns (ex: "John Doe")
+    - use instead -> firstName: "John", lastName: "Doe"
+2) No multivalues columns (ex: "1, 3, 5")
+    - use another table instead
+3) No calculated/derived values
+    - this is redundant
+4) Holds a SINGLE value
+5) No email1, email2, etc columns
+    - should be a seperate Emails table
+        - this is called Normalizing the data
+6) Can't depend on each other
+7) PK represents the record (what the table represents)
+8) Non-PK are attributes of the record (what the table represents)
+
